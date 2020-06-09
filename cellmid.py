@@ -1,10 +1,12 @@
 import numpy as np
 import sys
 data = sys.stdin.readlines()
-numarr= np.loadtxt(data)
+numarr = np.array(data[0].split())
+numarr = np.array([float(x) for x in numarr])
+
 xmin=numarr[range(3)]
-xmax=numarr[range(3,6)]
-origin=numarr[range(6,9)]
+xmax=numarr[range(4,7)]
+origin=numarr[-3:]
 boxsize = np.abs(xmin-xmax)
 boxsize = np.ceil(boxsize)+1
 boxsize = boxsize.astype(int)
